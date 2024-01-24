@@ -3,7 +3,7 @@ import { toast } from './ui/use-toast';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '@/redux/Hooks';
-import { addToCart } from '@/redux/cart/cartSlice';
+import { addToCart } from '@/redux/Features/cart/cartSlice';
 
 interface IProps {
   product: IProduct;
