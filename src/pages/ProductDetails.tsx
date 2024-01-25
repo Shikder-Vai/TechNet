@@ -7,17 +7,11 @@ import { useParams } from 'react-router-dom';
 export default function ProductDetails() {
   const { id } = useParams();
 
-  //! Temporary code, should be replaced with redux
-  const [data, setData] = useState<IProduct[]>([]);
-  useEffect(() => {
-    fetch('../../public/data.json')
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
+  const {} = 
 
   const product = data?.find((item) => item._id === Number(id));
 
-  //! Temporary code ends here
+ 
 
   return (
     <>
