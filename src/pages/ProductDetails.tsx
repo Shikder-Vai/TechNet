@@ -1,6 +1,6 @@
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
-import { useSingleProductQuery } from '@/redux/api/ApiSlice';
+import { useSingleProductQuery } from '@/redux/Features/Product/ProductApi';
 
 import { useParams } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export default function ProductDetails() {
   return (
     <>
       <div className="flex max-w-7xl mx-auto items-center border-b border-gray-300">
-        <div className="w-[50%]">
+        <div className="w-[40%] ml-3">
           <img src={product?.image} alt="" />
         </div>
         <div className="w-[50%] space-y-3">
@@ -26,7 +26,7 @@ export default function ProductDetails() {
           <Button>Add to cart</Button>
         </div>
       </div>
-      <ProductReview />
+      <ProductReview id={id!} />
     </>
   );
 }

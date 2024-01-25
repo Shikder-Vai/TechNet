@@ -2,13 +2,13 @@ import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
+import { useGetProductsQuery } from '@/redux/Features/Product/ProductApi';
 // import { useToast } from '@/components/ui/use-toast';
 import {
   setPriceRange,
   toggleState,
 } from '@/redux/Features/Product/ProductSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/Hooks';
-import { useGetProductsQuery } from '@/redux/api/ApiSlice';
 import { IProduct } from '@/types/globalTypes';
 
 export default function Products() {
