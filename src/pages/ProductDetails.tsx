@@ -1,17 +1,13 @@
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
-import { IProduct } from '@/types/globalTypes';
-import { useEffect, useState } from 'react';
+import { useSingleProductQuery } from '@/redux/api/ApiSlice';
+
 import { useParams } from 'react-router-dom';
 
 export default function ProductDetails() {
   const { id } = useParams();
 
-  const {} = 
-
-  const product = data?.find((item) => item._id === Number(id));
-
- 
+  const { data: product } = useSingleProductQuery(id);
 
   return (
     <>
@@ -23,7 +19,7 @@ export default function ProductDetails() {
           <h1 className="text-3xl font-semibold">{product?.name}</h1>
           <p className="text-xl">Rating: {product?.rating}</p>
           <ul className="space-y-1 text-lg">
-            {product?.features?.map((feature) => (
+            {product?.features?.map((feature: string) => (
               <li key={feature}>{feature}</li>
             ))}
           </ul>

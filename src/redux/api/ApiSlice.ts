@@ -9,4 +9,4 @@ export const api = createApi({
   }),
 });
 
-export const { useGetProductsQuery } = api;
+export const { useGetProductsQuery, useSingleProductQuery } = api;
