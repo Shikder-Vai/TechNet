@@ -9,7 +9,7 @@ interface IUserState {
   };
   isLoading: boolean;
   isError: boolean;
-  Error: string | null;
+  error: string | null;
 }
 
 interface ICredintial {
@@ -23,7 +23,7 @@ const initialState: IUserState = {
   },
   isLoading: false,
   isError: false,
-  Error: null,
+  error: null,
 };
 
 export const createUser = createAsyncThunk(
@@ -43,9 +43,18 @@ const userSlice = createSlice({
     builder
       .addCase(createUser.pending, (state) => {
         state.isLoading = true;
+        state.isError = false;
+        state.error = null;
       })
-      .addCase(createUser.fulfilled, () => {})
-      .addCase(createUser.rejected, () => {});
+      .addCase(createUser.fulfilled, (state, action) => {
+        state.user.email = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(createUser.rejected, (state, action) => {
+        state.user.email = null;
+        state.isError = true;
+        state.error = action.error.message!;
+      });
   },
 });
 

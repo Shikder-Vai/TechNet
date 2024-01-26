@@ -64,10 +64,10 @@ export default function Navbar() {
                       Billing
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer">
-                      Team
+                      <Link to={'/signup'}> SignUp</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer">
-                      Subscription
+                      <Link to={'/login'}>Login</Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
